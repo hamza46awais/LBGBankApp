@@ -24,10 +24,21 @@ public class BankAccount {
     }
 
     public double getBalance() {
-        return balance;
+        return (double) balance/100;
     }
 
     public double getMinimumBalance() {
         return minimumBalance;
+    }
+
+    public boolean withdraw(double l) {
+        long withdrawAmount= Math.round(l*100);
+
+        if (this.balance - withdrawAmount >= this.minimumBalance) {
+            this.balance -= withdrawAmount;
+            return true;
+        }
+
+        return false;
     }
 }
