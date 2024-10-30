@@ -5,9 +5,9 @@ public class BankAccount {
         this.accountHolderName = accountHolderName;
     }
 
-    private String accountHolderName;
-    private long balance;
-    private long minimumBalance;
+    protected String accountHolderName;
+    protected long balance;
+    protected long minimumBalance;
 
     public BankAccount(String accountHolderName) {
         this.accountHolderName = accountHolderName;
