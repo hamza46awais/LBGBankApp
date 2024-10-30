@@ -34,8 +34,19 @@ public class BankAccount {
     public boolean withdraw(double l) {
         long withdrawAmount= Math.round(l*100);
 
-        if (this.balance - withdrawAmount >= this.minimumBalance) {
+        if ((this.balance - withdrawAmount >= this.minimumBalance) && (withdrawAmount > 0)) {
             this.balance -= withdrawAmount;
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean deposit(double l) {
+        long depositAmount= Math.round(l*100);
+
+        if (depositAmount > 0) {
+            this.balance += depositAmount;
             return true;
         }
 
